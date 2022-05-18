@@ -22,15 +22,16 @@ for (int i = 0; i < randomArray.GetLength(1); i++)
     Console.WriteLine($"The average of the column {i} is {averageArray[i]};");
 }
 
-void FillArray(int[,] array, int numberRow, int numberCol, int lowerLim, int upperLim)
+int[,] FillArray(int[,] array, int numberRow, int numberCol, int lowerLim, int upperLim)
 {
-    for (int i = 0; i < randomArray.GetLength(0); i++)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        for (int j = 0; j < randomArray.GetLength(1); j++)
+        for (int j = 0; j < array.GetLength(1); j++)
         {
-            randomArray[i, j] = new Random().Next(lowerLim, upperLim + 1);
+            array[i, j] = new Random().Next(lowerLim, upperLim + 1);
         }
     }
+    return array;
 }
 
 void PrintArray(int[,] array)
